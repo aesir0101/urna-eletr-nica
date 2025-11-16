@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Resultado Parcial — Simulador 2026</title>
+
+  <link rel="stylesheet" href="resultado.css">
+  <script src="code.js" defer></script>
+</head>
+<body>
+  <header class="result-header">
+    <h1>🗳️ Resultado Parcial das Votações</h1>
+
+    <nav aria-label="Navegação da página de resultado">
+      <a href="index.html" class="link-voltar" aria-label="Voltar à urna">⬅️ Voltar à Urna</a>
+      <button id="btnReset" class="botao-reset" title="Zerar parciais">🧹 Zerar Parciais</button>
+    </nav>
+  </header>
+
+  <main class="resultado-main" role="main" aria-live="polite">
+    <section class="parciais">
+      <h2>Votos por Candidato</h2>
+      <div id="listaParciais" class="lista-parciais">
+        <p>Nenhum voto registrado ainda.</p>
+      </div>
+    </section>
+
+    <section class="extras">
+      <h3>Totais e Estatísticas</h3>
+      <p id="totalVotos">Total de votos: 0</p>
+    </section>
+  </main>
+
+  <audio id="fimAudio" src="./audio/confirma.mp3" preload="auto"></audio>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urna Eletrônica - Eleições 2026</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="code.js" defer></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <h1>Urna Eletrônica — Simulador 2026</h1>
+    <nav aria-label="Navegação principal">
+      <a href="resultado.html" class="link-resultados">Ver parciais</a>
+    </nav>
+  </header>
+
+  <main class="urna" id="urna" role="main" aria-labelledby="titulo-urna">
+    <section class="tela" aria-live="polite">
+      <h2 id="titulo-urna" class="visually-hidden">Painel de Votação</h2>
+
+      <div class="display">
+        <div class="numero">
+          <input id="campo1" class="digito" maxlength="1" readonly aria-label="Primeiro dígito">
+          <input id="campo2" class="digito" maxlength="1" readonly aria-label="Segundo dígito">
+        </div>
+
+        <div id="candidato" class="pane-candidato" aria-atomic="true">
+          <p>Digite o número do candidato (2 dígitos)</p>
+        </div>
+      </div>
+    </section>
+
+    <aside class="painel painel__container">
+      <div class="logo" aria-hidden="true">
+        <img src="./img/jus.jpg" alt="Logo da Justiça Eleitoral (simulado)">
+      </div>
+
+      <div class="teclado" role="group" aria-label="Teclado numérico">
+        <button class="num" data-num="1">1</button>
+        <button class="num" data-num="2">2</button>
+        <button class="num" data-num="3">3</button>
+        <button class="num" data-num="4">4</button>
+        <button class="num" data-num="5">5</button>
+        <button class="num" data-num="6">6</button>
+        <button class="num" data-num="7">7</button>
+        <button class="num" data-num="8">8</button>
+        <button class="num" data-num="9">9</button>
+        <button class="num zero" data-num="0">0</button>
+      </div>
+
+      <div class="painel__acoes" role="group" aria-label="Ações de voto">
+        <button id="btnBranco" class="branco blink">BRANCO</button>
+        <button id="btnCorrige" class="corrige blink">CORRIGE</button>
+        <button id="btnConfirma" class="confirma blink">CONFIRMA</button>
+      </div>
+    </aside>
+  </main>
+
+  <audio id="confirmaAudio" src="./audio/confirma.mp3" preload="auto"></audio>
+
+  <footer class="site-footer" role="contentinfo">
+    <small>Simulador de Urna Eletrônica — Uso apenas educacional.</small>
+  </footer>
+</body>
+</html>

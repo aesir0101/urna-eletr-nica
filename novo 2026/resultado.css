@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+:root {
+  --bg: #f4f7fb;
+  --card: #fff;
+  --muted: #444;
+  --accent: #00C853;
+  --accent-orange: #FF9100;
+  --winner: #2979FF;
+
+  --shadow-soft: 0 4px 10px rgba(0,0,0,0.1);
+  --transition-fast: 0.2s ease;
+  --space-sm: 12px;
+  --space-md: 18px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--muted);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Cabeçalho */
+.result-header {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-md);
+}
+
+.link-voltar {
+  background: var(--card);
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--muted);
+  transition: var(--transition-fast);
+}
+
+.link-voltar:hover { background: var(--accent-orange); color: #fff; }
+
+.botao-reset {
+  background: #ffdddd;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.botao-reset:hover { background: #ff9b9b; transform: scale(1.05); }
+
+/* Estrutura principal */
+.resultado-main {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  gap: var(--space-md);
+  align-items: flex-start;
+  margin-top: var(--space-md);
+}
+
+/* Parciais */
+.parciais {
+  flex: 1;
+  background: var(--card);
+  padding: var(--space-md);
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+.lista-parciais {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-parcial {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.item-parcial .label { width: 120px; font-weight: 700; }
+.item-parcial .bar { flex: 1; height: 28px; border-radius: 6px; background: #f1f1f1; overflow: hidden; }
+.item-parcial .bar > .fill { height: 100%; background: var(--accent); width: 0%; transition: width 1s ease-out; }
+.item-parcial.winner .bar > .fill { background: var(--winner); }
+.count { width: 50px; text-align: right; font-weight: 700; }
+
+/* Estatísticas extras */
+.extras {
+  width: 320px;
+  background: var(--card);
+  padding: var(--space-md);
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+}
+
+.total { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+
+@keyframes fadeIn { from {opacity:0; transform: translateY(10px);} to {opacity:1; transform: translateY(0);} }
+
+/* Responsividade */
+@media (max-width: 900px) { .resultado-main { flex-direction: column; } .extras { width: 100%; } }
+@media (max-width: 600px) { .item-parcial .label { width: 80px; } .count { width: 40px; } }
+@media (max-width: 480px) { .resultado-main { padding: 10px; } .parciais, .extras { padding: 10px; } }
